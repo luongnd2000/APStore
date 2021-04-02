@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace APStore.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         // GET: Admin/User
         public ActionResult Index()

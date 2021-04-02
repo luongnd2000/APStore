@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="62f0b0b3c45f4fe08068a21a34388b61" Name="Diagram1" ZoomLevel="74" >
+        <EntityTypeShape EntityType="APStoreModel.AdminLogin" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APStoreModel.Bill" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APStoreModel.DeliveryDetail" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="APStoreModel.Discount" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="APStoreModel.Product" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APStoreModel.ProductCategory" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="APStoreModel.UserLogin" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APStoreModel.BillDetail" Width="1.5" PointX="0.75" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

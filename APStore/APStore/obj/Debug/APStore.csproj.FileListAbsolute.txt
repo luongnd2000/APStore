@@ -77,3 +77,7 @@ D:\Learning\UTC\ASP.Net MVC\APStore\APStore\APStore\obj\Debug\APStore.csproj.Cor
 D:\Learning\UTC\ASP.Net MVC\APStore\APStore\APStore\obj\Debug\APStore.csproj.CopyComplete
 D:\Learning\UTC\ASP.Net MVC\APStore\APStore\APStore\obj\Debug\APStore.dll
 D:\Learning\UTC\ASP.Net MVC\APStore\APStore\APStore\obj\Debug\APStore.pdb
+D:\Learning\UTC\ASP.Net MVC\APStore\APStore\APStore\bin\EntityFramework.dll
+D:\Learning\UTC\ASP.Net MVC\APStore\APStore\APStore\bin\EntityFramework.SqlServer.dll
+D:\Learning\UTC\ASP.Net MVC\APStore\APStore\APStore\bin\EntityFramework.xml
+D:\Learning\UTC\ASP.Net MVC\APStore\APStore\APStore\bin\EntityFramework.SqlServer.xml

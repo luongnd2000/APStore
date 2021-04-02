@@ -20162,7 +20162,7 @@ textarea[resize='horizontal']
 
 .input-group-merge .form-control:not(:first-child)
 {
-    padding-left: 0; 
+    padding-left: 10px; 
 
     border-left: 0;
 }
