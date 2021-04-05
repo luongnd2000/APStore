@@ -16,7 +16,6 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/Assets/freshshop/css/bootstrap.min.css">
     <!-- Site CSS -->
@@ -27,20 +26,29 @@
     <link rel="stylesheet" href="~/Assets/freshshop/css/custom.css">
 
     <link rel="icon" href="~/Assets/argon-dashboard-master/assets/img/brand/favicon.png" type="image/png">
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+    <link href="~/Assets/startbootstrap-sb-admin-gh-pages/dist/css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Icons -->
+
+    <link rel="icon" href="~/Assets/argon-dashboard-master/assets/img/brand/favicon.png" type="image/png">
+    <link rel="stylesheet" href="~/Assets/argon-dashboard-master/assets/vendor/nucleo/css/nucleo.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/argon-dashboard-master/assets/vendor/fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/argon-dashboard-master/assets/css/argon.css?v=1.2.0" type="text/css">
 
 </head>
 
 <body>
-    
+
     @RenderPage("_Top.cshtml")
     @RenderBody()
     @RenderPage("_Footer.cshtml")
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="ni ni-bold-up"></i></a>
 
     <!-- ALL JS FILES -->
     <script src="~/Assets/freshshop/js/jquery-3.2.1.min.js"></script>
@@ -60,6 +68,16 @@
     <script src="~/Assets/freshshop/js/form-validator.min.js"></script>
     <script src="~/Assets/freshshop/js/contact-form-script.js"></script>
     <script src="~/Assets/freshshop/js/custom.js"></script>
+
+
+
+    <script src="~/Assets/argon-dashboard-master/assets/vendor/js-cookie/js.cookie.js"></script>
+    <script src="~/Assets/argon-dashboard-master/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="~/Assets/argon-dashboard-master/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <script src="~/Assets/argon-dashboard-master/assets/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="~/Assets/argon-dashboard-master/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+    <script src="~/Assets/argon-dashboard-master/assets/js/argon.js?v=1.2.0"></script>
+
 </body>
 
 </html>
