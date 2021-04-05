@@ -32,5 +32,7 @@ namespace APStore.Models.Entities
 
         [NotMapped]
         public string CategoryNameDisplay { get; set; }
+        [NotMapped]
+        public string AlterImage { get; set; }
     }
 }

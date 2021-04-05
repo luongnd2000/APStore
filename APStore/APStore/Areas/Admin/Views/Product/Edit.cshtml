@@ -54,8 +54,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="ni ni-image"></i></span>
                                 </div>
-                                @Html.EditorFor(model => model.ImagePath, new { htmlAttributes = new { @class = "form-control", @type = "file" } })
-                                @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.AlterImage, new { htmlAttributes = new { @class = "form-control", @type = "file" } })
                             </div>
                         </div>
                         <div class="form-group mb-3">
@@ -92,3 +91,4 @@
         </div>
     </div>
 </div>
+

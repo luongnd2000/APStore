@@ -15,7 +15,7 @@ namespace APStore.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var model = new ProductDao().ListAll();
-            foreach(var item in model)
+            foreach (var item in model)
             {
                 item.CategoryNameDisplay = new ProductCategoryDAO().Get(item.CategoryID).Name;
             }
@@ -33,12 +33,15 @@ namespace APStore.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var file = Request.Files[0];
-                string rootFile = "/Upload/Image/";
-                string fileName = "Product_Image_" + Guid.NewGuid() + file.FileName;
-                string path = Path.Combine(Server.MapPath(rootFile), fileName);
-                file.SaveAs(path);
-                obj.ImagePath = rootFile + fileName;
+                var file = Request.Files[1];
+                if (file != null)
+                {
+                    string rootFile = "/Upload/Image/";
+                    string fileName = "Product_Image_" + Guid.NewGuid() + file.FileName;
+                    string path = Path.Combine(Server.MapPath(rootFile), fileName);
+                    file.SaveAs(path);
+                    obj.ImagePath = rootFile + fileName;
+                }
                 bool result = new ProductDao().Create(obj);
                 if (result)
                 {
@@ -78,11 +81,12 @@ namespace APStore.Areas.Admin.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult Edit( Product obj)
+        public ActionResult Edit(Product obj)
         {
             if (ModelState.IsValid)
             {
-                if (Request.Files[0]!=null) { 
+                if (Request.Files[0] != null)
+                {
                     var file = Request.Files[0];
                     string rootFile = "/Upload/Image/";
                     string fileName = "Product_Image_" + Guid.NewGuid() + file.FileName;
@@ -90,7 +94,7 @@ namespace APStore.Areas.Admin.Controllers
                     file.SaveAs(path);
                     obj.ImagePath = rootFile + fileName;
                 }
-                
+
                 bool result = new ProductDao().Update(obj);
                 if (result)
                 {
