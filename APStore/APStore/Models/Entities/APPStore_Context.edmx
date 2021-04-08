@@ -35,6 +35,15 @@ warning 6002: The table/view 'APStore.dbo.BillDetail' does not have a primary ke
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="Quantities" Type="int" />
         </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Quantities" Type="int" />
+        </EntityType>
         <EntityType Name="DeliveryDetail">
           <Key>
             <PropertyRef Name="ID" />
@@ -81,10 +90,12 @@ warning 6002: The table/view 'APStore.dbo.BillDetail' does not have a primary ke
           <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NameDisplay" Type="nvarchar" MaxLength="100" />
           <Property Name="AvartarPath" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityContainer Name="APStoreModelStoreContainer">
           <EntitySet Name="AdminLogin" EntityType="Self.AdminLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DeliveryDetail" EntityType="Self.DeliveryDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Discount" EntityType="Self.Discount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
@@ -111,6 +122,7 @@ warning 6002: The table/view 'APStore.dbo.BillDetail' does not have a primary ke
           <EntitySet Name="ProductCategories" EntityType="APStoreModel.ProductCategory" />
           <EntitySet Name="UserLogins" EntityType="APStoreModel.UserLogin" />
           <EntitySet Name="BillDetails" EntityType="APStoreModel.BillDetail" />
+          <EntitySet Name="Carts" EntityType="APStoreModel.Cart" />
         </EntityContainer>
         <EntityType Name="AdminLogin">
           <Key>
@@ -177,6 +189,7 @@ warning 6002: The table/view 'APStore.dbo.BillDetail' does not have a primary ke
           <Property Name="Pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NameDisplay" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AvartarPath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BillDetail">
           <Key>
@@ -184,6 +197,15 @@ warning 6002: The table/view 'APStore.dbo.BillDetail' does not have a primary ke
             <PropertyRef Name="ProductID" />
           </Key>
           <Property Name="BillID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Quantities" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ProductID" Type="Int32" Nullable="false" />
           <Property Name="Quantities" Type="Int32" />
         </EntityType>
@@ -259,6 +281,7 @@ warning 6002: The table/view 'APStore.dbo.BillDetail' does not have a primary ke
           <EntitySetMapping Name="UserLogins">
             <EntityTypeMapping TypeName="APStoreModel.UserLogin">
               <MappingFragment StoreEntitySet="UserLogin">
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="AvartarPath" ColumnName="AvartarPath" />
                 <ScalarProperty Name="NameDisplay" ColumnName="NameDisplay" />
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
@@ -272,6 +295,15 @@ warning 6002: The table/view 'APStore.dbo.BillDetail' does not have a primary ke
                 <ScalarProperty Name="Quantities" ColumnName="Quantities" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="BillID" ColumnName="BillID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Carts">
+            <EntityTypeMapping TypeName="APStoreModel.Cart">
+              <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="Quantities" ColumnName="Quantities" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

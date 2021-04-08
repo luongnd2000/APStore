@@ -4,96 +4,161 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="shop-box-inner">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
-                <div class="right-product-box">
-                    <div class="product-item-filter row">
-                        <div class="col-12 col-sm-8 text-center text-sm-left">
-                            <div>
-                                <span>Sắp xếp theo </span>
-                                <select>
-                                    <option data-display="Select">Giá</option>
-                                    <option value="1">Tên</option>
-                                    <option value="3">Số lượng đã bán</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-4 text-center text-sm-right">
-                            <ul class="nav nav-tabs ml-auto">
-                                <li>
-                                    <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i> </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <div class="product-categorie-box">
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                <div class="row">
-                                    @foreach (var item in @Model)
-                                    {
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                    <img src="@item.ImagePath" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="@Url.Action("Detail",new { ID=@item.ID})" data-toggle="tooltip" data-placement="right" title="Chi tiết"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Thêm vào giỏ hàng</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>@item.Name</h4>
-                                                    <h5>@item.Price.ToString("#,##0.00") đ</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="app__container">
+    <div class="grid wide">
+        <div class="row-lbr sm-gutter app__content">
+            <div class="col-lbr l-2 m-0 c-0-lbr">
+                <nav class="category">
+                    <h3 class="category__heading">
+                        <i class="category__heading-icon fas fa-list-ul"></i>
+                        Danh mục
+                    </h3>
+                    <ul class="category-list">
+                        <li class="category-item category-item--active">
+                            <a href="#" class="category-item__link">Hạt</a>
+                        </li>
+                        @foreach (var item in ViewBag.ListCategory)
+                        {
+                            <li class="category-item ">
+                                <a href="#" class="category-item__link">@item.Name</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
             </div>
-            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
-                <div class="product-categori">
-                    <div class="search-product">
-                        <form action="#">
-                            <input class="form-control" placeholder="Tìm kiếm sản phẩm..." type="text">
-                            <button type="submit"> <i class="fa fa-search"></i> </button>
-                        </form>
-                    </div>
-                    <div class="filter-sidebar-left">
-                        <div class="title-left">
-                            <h3>Danh mục sản phẩm</h3>
-                        </div>
-                        <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
 
-                            <div class="list-group-collapse sub-men">
-                                @foreach (var item in ViewBag.ListCategory)
-                                {
-                                    <a class="list-group-item " href="">
-                                        @item.Name<small class="text-muted"> (100)</small>
-                                    </a>
-                                }
-                            </div>
+            <div class="col-lbr l-10 m-12 c-12">
+                <div class="home-filter hide-on-mobile-tablet">
+                    <span class="home-filter__label">Sắp xếp theo</span>
+                    <button class="home-filter__btn btn">Loại</button>
+                    <button class="home-filter__btn btn btn--primary">Mới nhất</button>
+                    <button class="home-filter__btn btn">Bán chạy</button>
+
+                    <div class="select-input">
+                        <span class="select-input__label">Giá</span>
+                        <i class="fas fa-angle-down select-input__icon"></i>
+                        <!-- list option -->
+                        <ul class="select-input__list">
+                            <li class="select-input__item">
+                                <a href="#" class="select-input__link">Giá: Thấp đến cao</a>
+                            </li>
+                            <li class="select-input__item">
+                                <a href="#" class="select-input__link">Giá: Cao đến thấp</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="home-filter__page">
+                        <span class="home-filter__page-num">
+                            <span class="home-filter__page-current">1</span>/14
+                        </span>
+
+                        <div class="home-filter__page-control">
+                            <a href="#" class="home-filter__page-btn  home-filter__page-btn--disable">
+                                <i class="fas fa-angle-left home-filter__page-icon"></i>
+                            </a>
+                            <a href="#" class="home-filter__page-btn">
+                                <i class="fas fa-angle-right home-filter__page-icon"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <div class="home-produce">
+                    <nav class="mobile__category">
+                        <ul class="mobile__category-list">
+                            @foreach (var item in ViewBag.ListCategory)
+                            {
+                                <li class="mobile__category-item">
+                                    <a href="#" class="mobile__category-link">@item.Name</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+
+                    <!-- List products -->
+                    <div class="row-lbr sm-gutter list-product">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lbr l-2-4 m-4 c-6-lbr">
+                                <a class="home-produce-item" href="/Shop/Detail?id=@item.ID">
+                                    <div class="home-produce-item__img"
+                                         style="background-image: url('@item.ImagePath');"></div>
+                                    <h4 class="home-produce-item__name">
+                                        @item.Name
+                                    </h4>
+                                    <div class="home-produce-item__price">
+                                        <span class="home-produce-item__price-old">4600000đ</span>
+                                        <span class="home-produce-item__price-new">@item.Price.ToString("#,##")đ</span>
+                                    </div>
+                                    <div class="home-produce-item__action">
+                                        <span class="home-produce-item__like home-produce-item__liked">
+                                            <i class="home-produce-item__like-icon--empty far fa-heart"></i>
+                                            <i class="home-produce-item__like-icon--fill fas fa-heart"></i>
+                                        </span>
+
+                                        <div class="home-produce-item__rating">
+                                            <i class="home-produce-item__star-gold fas fa-star"></i>
+                                            <i class="home-produce-item__star-gold fas fa-star"></i>
+                                            <i class="home-produce-item__star-gold fas fa-star"></i>
+                                            <i class="home-produce-item__star-gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-produce-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-produce-item__origin">
+                                        <span class="home-produce-item__origin-brand">Whoo</span>
+                                        <span class="home-produce-item__origin-name">Nhật bản</span>
+                                    </div>
+                                    <div class="home-produce-item__favourite">
+                                        <i class="fas fa-check"></i>
+                                        <span>Yêu thích</span>
+                                    </div>
+                                    <div class="home-produce-item__sale-off">
+                                        <span class="home-produce-item__sale-off-percent">43%</span>
+                                        <span class="home-produce-item__sale-off__sale-off-label">Giảm</span>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+
+                <ul class="pagination produce-pagination">
+                    <li class="pagination-item">
+                        <a href="#" class="pagination-item__link">
+                            <i class="pagination-item__icon fas fa-angle-left"></i>
+                        </a>
+                    </li>
+                    <li class="pagination-item pagination-item-active">
+                        <a href="#" class="pagination-item__link">1</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#" class="pagination-item__link">2</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#" class="pagination-item__link">3</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#" class="pagination-item__link">4</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#" class="pagination-item__link">...</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#" class="pagination-item__link">14</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="#" class="pagination-item__link">
+                            <i class="pagination-item__icon fas fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+
 </div>

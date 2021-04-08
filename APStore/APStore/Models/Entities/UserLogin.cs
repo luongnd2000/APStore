@@ -18,5 +18,6 @@ namespace APStore.Models.Entities
         public string Pass { get; set; }
         public string NameDisplay { get; set; }
         public string AvartarPath { get; set; }
+        public string Email { get; set; }
     }
 }

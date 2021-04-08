@@ -33,5 +33,6 @@ namespace APStore.Models.Entities
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<UserLogin> UserLogins { get; set; }
         public virtual DbSet<BillDetail> BillDetails { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
     }
 }

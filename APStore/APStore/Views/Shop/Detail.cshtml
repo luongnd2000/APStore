@@ -4,225 +4,168 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="shop-detail-box-main">
+
+<div class="app">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-5 col-lg-5 col-md-6">
-                <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active"> <img class="d-block w-100" src="@Model.ImagePath" alt="First slide"> </div>
-                        <div class="carousel-item"> <img class="d-block w-100" src="@Model.ImagePath" alt="Second slide"> </div>
-                        <div class="carousel-item"> <img class="d-block w-100" src="@Model.ImagePath" alt="Third slide"> </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">
-                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel-example-1" role="button" data-slide="next">
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                        <span class="sr-only">Next</span>
-                    </a>
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-1" data-slide-to="0" class="active">
-                            <img class="d-block w-100 img-fluid" src="@Model.ImagePath" alt="" />
-                        </li>
-                        <li data-target="#carousel-example-1" data-slide-to="1">
-                            <img class="d-block w-100 img-fluid" src="@Model.ImagePath" alt="" />
-                        </li>
-                        <li data-target="#carousel-example-1" data-slide-to="2">
-                            <img class="d-block w-100 img-fluid" src="@Model.ImagePath" alt="" />
-                        </li>
-                    </ol>
-                </div>
-            </div>
-            <div class="col-xl-7 col-lg-7 col-md-6">
-                <div class="single-product-details">
-                    <h2>@Model.Name</h2>
-                    <h5> <del></del> @Model.Price.ToString("#,##0.00") đ</h5>
-                    <p class="available-stock"><span> Còn 20 sản phẩm / <a href="#">8 đã bán  </a></span><p>
-                        <h4>Mô tả sản phẩm:</h4>
-                    <p>
-                        Nam sagittis a augue eget scelerisque. Nullam lacinia consectetur sagittis. Nam sed neque id eros fermentum dignissim quis at tortor. Nullam ultricies urna quis sem sagittis pharetra. Nam erat turpis, cursus in ipsum at,
-                        tempor imperdiet metus. In interdum id nulla tristique accumsan. Ut semper in quam nec pretium. Donec egestas finibus suscipit. Curabitur tincidunt convallis arcu.
-                    </p>
-
-                    <div class="form-group quantity-box">
-                        <label class="control-label">Số lượng</label>
-                        <input class="form-control" value="0" min="0" max="20" type="number">
-                    </div>
-
-
-                    <div class="price-box-bar">
-                        <div class="cart-and-bay-btn">
-                            <a class="btn btn-primary" data-fancybox-close="" href="#">Mua</a>
-                            <a class="btn btn-primary" data-fancybox-close="" href="#">Thêm vào giỏ hàng</a>
+        <div class="row product">
+            <div class="col col-lg-5 col-md-5 col-sm-12">
+                <div class="depicted-product">
+                    <div class="row">
+                        <div class="col col-12">
+                            <img src="@Model.ImagePath" alt="product" class="depicted-product__img">
                         </div>
                     </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row my-5">
-        <div class="card card-outline-secondary my-4">
-            <div class="card-header">
-                <h2>Nhận xét sản phẩm</h2>
-            </div>
-            <div class="card-body">
-                <div class="media mb-3">
-                    <div class="mr-2">
-                        <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
+                    <div class="row">
+                        <div class="col col-12 depicted-product__img-list">
+                            <img src="@Model.ImagePath" alt="product" class="depicted-product__img-item">
+                            <img src="@Model.ImagePath" alt="product" class="depicted-product__img-item">
+                            <img src="@Model.ImagePath" alt="product" class="depicted-product__img-item">
+                            <img src="@Model.ImagePath" alt="product" class="depicted-product__img-item">
+                        </div>
                     </div>
-                    <div class="media-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                        <small class="text-muted">Posted by Anonymous on 3/1/18</small>
-                    </div>
-                </div>
-                <hr>
-                <div class="media mb-3">
-                    <div class="mr-2">
-                        <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
-                    </div>
-                    <div class="media-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                        <small class="text-muted">Posted by Anonymous on 3/1/18</small>
-                    </div>
-                </div>
-                <hr>
-                <div class="media mb-3">
-                    <div class="mr-2">
-                        <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
-                    </div>
-                    <div class="media-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                        <small class="text-muted">Posted by Anonymous on 3/1/18</small>
+                    <div class="row">
+                        <div class="col col-12 depicted-product__social">
+                            <div class="depicted-product__social-share">
+                                <span>Chia sẻ:</span>
+                                <a href="#">
+                                    <i class="fab fa-facebook-messenger social-share--messenger"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-facebook social-share--facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-google-plus social-share--google-plus"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-pinterest social-share--pinterest"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-twitter-square social-share--twitter"></i>
+                                </a>
+                            </div>
+                            <div class="depicted-product__social-like">
+                                <i class="far fa-heart social-like--heart"></i>
+                                <span class="depicted-product__social-like__number">Đã thích (6,7k)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <hr>
-                <a href="#" class="btn hvr-hover">Leave a Review</a>
             </div>
-        </div>
-    </div>
 
-    <div class="row my-5">
-        <div class="col-lg-12">
-            <div class="title-all text-center">
-                <h1>Các sản phẩm liên quan</h1>
-            </div>
-            <div class="featured-products-box owl-carousel owl-theme">
-                @foreach (var item in @ViewBag.ListProduct)
-                {
-
-                    <div class="item">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <img src="@item.ImagePath" class="img-fluid" alt="Image">
-                                <div class="mask-icon">
-                                    <ul>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                    <a class="cart" href="#">Thêm vào giỏ hàng</a>
+            <div class="col col-lg-7 col-md-7 col-sm-12">
+                <div class="sale-product">
+                    <div class="product__name">@Model.Name</div>
+                    <div class="product-reviews">
+                        <div class="product-reviews__star">
+                            <span class="product-reviews__star-number">4.9</span>
+                            <div>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="product-reviews__detail">
+                            <span class="product-reviews__detail-number">3,4K</span>
+                            <span class="product-reviews__detail-title">Đánh giá</span>
+                        </div>
+                        <div class="product-reviews__sold">
+                            <span class="product-reviews__sold-number">3,6K</span>
+                            <span class="product-reviews__sold-title">Đã bán</span>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-price__detail">
+                            <div class="product-price__detail-old"><span>₫</span>153.000</div>
+                            <div class="product-price__detail-new"><span>₫</span>@Model.Price.ToString("#,##")</div>
+                            <div class="product-price__detail-percent">39% GIẢM</div>
+                        </div>
+                        <div class="product-price__title">
+                            @*<img src="~/Assets/f8-shop/assets/img/saleOff.png" alt="sale off" class="product-price__title-img">*@
+                            @*<div class="product-price__title-desc">Ở đâu rẻ hơn, Shopee hoàn tiền</div>*@
+                        </div>
+                    </div>
+                    <div class="row product-option">
+                        <div class="col col-12">
+                            @*<div class="product-option__select">
+                                <div class="product-option__select-title">Deal sốc</div>
+                                <div class="product-option__select-desc">Mua kèm Deal sốc</div>
+                            </div>*@
+                            <div class="product-option__select">
+                                <div class="product-option__select-title">Vận chuyển</div>
+                                <div class="product-option__select-desc">
+                                    <div class="product-option__select-free-ship">
+                                        <div class="product-option__select-free-ship-title">
+                                            <img src="~/Assets/f8-shop/assets/img/FreeShip.png" alt="free ship"
+                                                 class="product-option__select-free-ship-img">
+                                            <div class="product-option__select-free-ship-text">
+                                                Miễn Phí Vận Chuyển
+                                            </div>
+                                        </div>
+                                        <div class="product-option__select-free-ship-decs">
+                                            Miễn Phí Vận Chuyển khi đơn đạt giá trị tối thiểu
+                                        </div>
+                                    </div>
+                                    <div class="product-option__select-ship-to">
+                                        <div class="product-option__select-ship-to-title">
+                                            <i class="fas fa-box product-option__select-ship-to-icon"></i>
+                                            <div class="product-option__select-ship-to-text">
+                                                Vận chuyển tới <span> Huyện Ba Vì, Hà Nội</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-option__select-ship-to-decs">
+                                            Phí vận chuyển ₫43.737 - ₫55.370
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="why-text">
-                                <h4>@item.Name</h4>
-                                <h5> @item.Price.ToString("#,##0.00") đ</h5>
+                            <div class="product-option__select">
+                                <div class="product-option__select-title product-option__select-color-title">
+                                    Màu sắc
+                                </div>
+                                <div class="product-option__select-desc">
+                                    <button type="button"
+                                            class="btn product-option__select-btn-color">
+                                        Trắng
+                                    </button>
+                                    <button type="button" class="btn product-option__select-btn-color">Đen</button>
+                                    <button type="button" class="btn product-option__select-btn-color">Xanh</button>
+                                    <button type="button" class="btn product-option__select-btn-color">Hồng</button>
+                                </div>
+                            </div>
+                            <div class="product-option__select">
+                                <div class="product-option__select-title product-option__select-quantity-product-title">
+                                    Số lượng
+                                </div>
+                                <div class="product-option__select-desc product-option__select-quantity-product">
+                                    <div class="quantity-product">
+                                        <button class="btn-sub-quantity">-</button>
+                                        <input type="text" class="input-quantity" value="1">
+                                        <button class="btn-add-quantity">+</button>
+                                    </div>
+                                    <div>462 sản phẩm có sẵn</div>
+                                </div>
+                            </div>
+                            <div class="product-option__select">
+                                <button type="button" class="product-option-btn btn-add-to-cart">
+                                    Thêm vào giỏ
+                                    hàng
+                                </button>
+                                <button type="button" class="product-option-btn btn-buy-now">Mua ngay</button>
                             </div>
                         </div>
                     </div>
-                }
-            </div>
-        </div>
-    </div>
-
-</div>
-<!-- End Cart -->
-<!-- Start Instagram Feed  -->
-<div class="instagram-box">
-    <div class="main-instagram owl-carousel owl-theme">
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_e081df8f-3076-4cb3-add1-52c7dd71df25hat-dieu-rang-muoi-255g-main_b788fc32e11d40e28666f1035a0ade9f_master.jpg" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_e081df8f-3076-4cb3-add1-52c7dd71df25hat-dieu-rang-muoi-255g-main_b788fc32e11d40e28666f1035a0ade9f_master.jpg" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_4667ec50-342e-4184-b98a-c3ecb8f5de0e20190301-111737-3e21cde6-fb3c-4e8a-a359-d8a1bd8bc6da.png" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_dc5c2674-faa9-4c97-9f27-4aa612ee5db7hat-bi-1.jpg" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_914ace46-60f6-457e-b57e-3473393a17bdProduct_Image_15f1a7c9-ccf5-4fef-95ae-ae7345c56427HatMacca.jpg" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_7f744e66-e24d-42db-84cf-aec6ad1e8689hatdieu.jpg" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_6e99f2c4-093b-4832-8b17-fbf3f6b9a1f3_hat-hanh-nhan_1.jpg" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_83e86509-b41f-4f14-abb0-e98f85e2128ddownload.jfif" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_73d94e0f-820e-474b-aa8a-2331ba2f7a7emua-qua-oc-my-tai-Ngonshop.jpg" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ins-inner-box">
-                <img src="~/Upload/Image/Product_Image_15f1a7c9-ccf5-4fef-95ae-ae7345c56427HatMacca.jpg" alt="" />
-                <div class="hov-in">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <a class="guarantee-product" href="#">
+                    <div>
+                        <img src="~/Assets/f8-shop/assets/img/GuaranteeProduct.png" alt="guarantee product"
+                             class="guarantee-product-img">
+                        <span class="guarantee-product-title">Shopee Đảm Bảo</span>
+                    </div>
+                    <span class="guarantee-product-desc">3 Ngày Trả Hàng / Hoàn Tiền</span>
+                </a>
             </div>
         </div>
     </div>
 </div>
-<!-- End Instagram Feed  -->

@@ -1,83 +1,147 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout=null;
+}
+<!DOCTYPE html>
 <html lang="en">
-<!-- Basic -->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Assets/f8-shop/assets/css/grid.css">
+    <link rel="stylesheet" href="~/Assets/f8-shop/assets/css/base.css">
+    <link rel="stylesheet" href="~/Assets/f8-shop/assets/css/main.css">
+    <link rel="stylesheet" href="~/Assets/f8-shop/assets/css/responsive.css">
+    <link rel="stylesheet" href="~/Assets/f8-shop/assets/font/fontawesome-free-5.15.1-web/css/all.min.css">
 
-    <!-- Site Metas -->
-    <title>Cửa hàng nông sản</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Site Icons -->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="~/Assets/freshshop/css/bootstrap.min.css">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="~/Assets/freshshop/css/style.css">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="~/Assets/freshshop/css/responsive.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="~/Assets/freshshop/css/custom.css">
-
-    <link rel="icon" href="~/Assets/argon-dashboard-master/assets/img/brand/favicon.png" type="image/png">
-
-    <link href="~/Assets/startbootstrap-sb-admin-gh-pages/dist/css/styles.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
-
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-    <!-- Icons -->
-
-    <link rel="icon" href="~/Assets/argon-dashboard-master/assets/img/brand/favicon.png" type="image/png">
-    <link rel="stylesheet" href="~/Assets/argon-dashboard-master/assets/vendor/nucleo/css/nucleo.css" type="text/css">
-    <link rel="stylesheet" href="~/Assets/argon-dashboard-master/assets/vendor/fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Assets/argon-dashboard-master/assets/css/argon.css?v=1.2.0" type="text/css">
-
+    <link rel="stylesheet" href="~/Assets/f8-shop/assets/css/detailProduct.css">
+    <link rel="stylesheet" href="~/Assets/f8-shop/assets/css/cart.css">
 </head>
 
 <body>
+    <div class="app">
+        @RenderPage("_Top.cshtml")
+        @RenderBody()
+        @RenderPage("_Footer.cshtml")
 
-    @RenderPage("_Top.cshtml")
-    @RenderBody()
-    @RenderPage("_Footer.cshtml")
+        <!-- Modal layout -->
+        <!-- <div class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__body"> -->
+        <!-- Register form -->
+        <!-- <div class="auth-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading">Đăng ký</h3>
+                            <span class="auth-from__switch-btn">Đăng nhập</span>
+                        </div>
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input" placeholder="Email của bạn">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" class="auth-form__input" placeholder="Xác minh mật khẩu">
+                            </div>
+                        </div>
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="ni ni-bold-up"></i></a>
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">
+                                Bằng việc đăng ký bạn đã đồng ý với F8-shop về
+                                <a href="#" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                                <a href="#" class="auth-form__text-link">Chính sách bảo mật</a>
+                            </p>
+                        </div>
 
-    <!-- ALL JS FILES -->
-    <script src="~/Assets/freshshop/js/jquery-3.2.1.min.js"></script>
-    <script src="~/Assets/freshshop/js/popper.min.js"></script>
-    <script src="~/Assets/freshshop/js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="~/Assets/freshshop/js/jquery.superslides.min.js"></script>
-    <script src="~/Assets/freshshop/js/bootstrap-select.js"></script>
-    <script src="~/Assets/freshshop/js/inewsticker.js"></script>
-    <script src="~/Assets/freshshop/js/bootsnav.js."></script>
-    <script src="~/Assets/freshshop/js/images-loded.min.js"></script>
-    <script src="~/Assets/freshshop/js/isotope.min.js"></script>
-    <script src="~/Assets/freshshop/js/owl.carousel.min.js"></script>
-    <script src="~/Assets/freshshop/js/baguetteBox.min.js"></script>
-    <script src="~/Assets/freshshop/js/jquery-ui.js"></script>
-    <script src="~/Assets/freshshop/js/jquery.nicescroll.min.js"></script>
-    <script src="~/Assets/freshshop/js/form-validator.min.js"></script>
-    <script src="~/Assets/freshshop/js/contact-form-script.js"></script>
-    <script src="~/Assets/freshshop/js/custom.js"></script>
+                        <div class="auth-form__controls">
+                            <button class="btn auth-form__controls-back btn--normal">Trở lại</button>
+                            <button class="btn btn--primary">Đăng ký</button>
+                        </div>
+                    </div>
+                    <div class="auth-form__socials">
+                        <a href="#" class="btn btn--size-s auth-form__socials--face btn--width-icon">
+                            <i class="fab fa-facebook-square auth-form__socials-icon"></i>
+                            <span class="auth-form__socials-title">
+                                Kết nối với Facebook
+                            </span>
+                        </a>
+                        <a href="#" class="btn btn--size-s auth-form__socials--google btn--width-icon">
+                            <i class="fab fa-google-plus-square auth-form__socials-icon"></i>
+                            <span class="auth-form__socials-title">
+                                Kết nối với Google
+                            </span>
+                        </a>
 
+                    </div>
+                </div> -->
+        <!-- Login form -->
+        <!-- <div class="auth-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading">Đăng nhập</h3>
+                            <span class="auth-from__switch-btn">Đăng ký</span>
+                        </div>
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input" placeholder="Email của bạn">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                            </div>
+                        </div>
 
+                        <div class="auth-form__aside">
+                            <div class="auth-form__help">
+                                <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                                <span class="auth-form__help-separate"></span>
+                                <a href="#" class="auth-form__help-link">Cần trợ giúp?</a>
+                            </div>
+                        </div>
 
-    <script src="~/Assets/argon-dashboard-master/assets/vendor/js-cookie/js.cookie.js"></script>
-    <script src="~/Assets/argon-dashboard-master/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-    <script src="~/Assets/argon-dashboard-master/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-    <script src="~/Assets/argon-dashboard-master/assets/vendor/chart.js/dist/Chart.min.js"></script>
-    <script src="~/Assets/argon-dashboard-master/assets/vendor/chart.js/dist/Chart.extension.js"></script>
-    <script src="~/Assets/argon-dashboard-master/assets/js/argon.js?v=1.2.0"></script>
+                        <div class="auth-form__controls">
+                            <button class="btn auth-form__controls-back btn--normal">Trở lại</button>
+                            <button class="btn btn--primary">Đăng nhập</button>
+                        </div>
+                    </div>
+                    <div class="auth-form__socials">
+                        <a href="#" class="btn btn--size-s auth-form__socials--face btn--width-icon">
+                            <i class="fab fa-facebook-square auth-form__socials-icon"></i>
+                            <span class="auth-form__socials-title">
+                                Kết nối với Facebook
+                            </span>
+                        </a>
+                        <a href="#" class="btn btn--size-s auth-form__socials--google btn--width-icon">
+                            <i class="fab fa-google-plus-square auth-form__socials-icon"></i>
+                            <span class="auth-form__socials-title">
+                                Kết nối với Google
+                            </span>
+                        </a>
 
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    @*<script src="~/Assets/f8-shop/assets/js/main.js"></script>*@
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
