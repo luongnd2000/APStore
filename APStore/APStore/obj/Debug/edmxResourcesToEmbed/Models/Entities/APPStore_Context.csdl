@@ -9,6 +9,7 @@
     <EntitySet Name="ProductCategories" EntityType="APStoreModel.ProductCategory" />
     <EntitySet Name="UserLogins" EntityType="APStoreModel.UserLogin" />
     <EntitySet Name="BillDetails" EntityType="APStoreModel.BillDetail" />
+    <EntitySet Name="Carts" EntityType="APStoreModel.Cart" />
   </EntityContainer>
   <EntityType Name="AdminLogin">
     <Key>
@@ -75,6 +76,7 @@
     <Property Name="Pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NameDisplay" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="AvartarPath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="BillDetail">
     <Key>
@@ -82,6 +84,15 @@
       <PropertyRef Name="ProductID" />
     </Key>
     <Property Name="BillID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Quantities" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <Property Name="Quantities" Type="Int32" />
   </EntityType>

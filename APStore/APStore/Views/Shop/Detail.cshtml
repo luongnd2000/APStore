@@ -89,9 +89,9 @@
                     <div class="row product-option">
                         <div class="col col-12">
                             @*<div class="product-option__select">
-                                <div class="product-option__select-title">Deal sốc</div>
-                                <div class="product-option__select-desc">Mua kèm Deal sốc</div>
-                            </div>*@
+                                    <div class="product-option__select-title">Deal sốc</div>
+                                    <div class="product-option__select-desc">Mua kèm Deal sốc</div>
+                                </div>*@
                             <div class="product-option__select">
                                 <div class="product-option__select-title">Vận chuyển</div>
                                 <div class="product-option__select-desc">
@@ -141,16 +141,15 @@
                                 <div class="product-option__select-desc product-option__select-quantity-product">
                                     <div class="quantity-product">
                                         <button class="btn-sub-quantity">-</button>
-                                        <input type="text" class="input-quantity" value="1">
+                                        <input id="quantities" type="number" min="1" class="input-quantity" value="1">
                                         <button class="btn-add-quantity">+</button>
                                     </div>
                                     <div>462 sản phẩm có sẵn</div>
                                 </div>
                             </div>
                             <div class="product-option__select">
-                                <button type="button" class="product-option-btn btn-add-to-cart">
-                                    Thêm vào giỏ
-                                    hàng
+                                <button type="button" onclick="AddProduct(@Model.ID)" class="product-option-btn btn-add-to-cart">
+                                    Thêm vào giỏ hàng
                                 </button>
                                 <button type="button" class="product-option-btn btn-buy-now">Mua ngay</button>
                             </div>
@@ -169,3 +168,72 @@
         </div>
     </div>
 </div>
+
+<script>
+    function AddProduct(id, userName) {
+        var quantities = document.getElementById("quantities").value;
+        console.log(quantities);
+        var data = new FormData();
+        data.append("ID", id);
+        data.append("Quantities", quantities);
+        $.ajax({
+            type: "POST",
+            url: '/Cart/AddProduct',
+            data: data,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response == "NotLogin") {
+                    window.location.href = '@Url.Action("Index", "UserLogin")';
+                    console.log(response);
+                }
+                else if (response) {
+                    console.log(response)
+                    var cart = JSON.parse(response);
+                    var content = ('<li class="header__cart-item" id="li_'+cart.ProductID+'">');
+                    content += '<img src="'+cart.ProductImagePathDisplay+'" alt="" class="header__cart-img">';
+                    content += '<div class="header__cart-item-info">';
+                    content += '<div class="header__cart-item-head">';
+                    content += '<h5 class="header__cart-item-name">';
+                    content += cart.ProductNameDisplay;
+                    content += '</h5>';
+                    content += '<div class="header__cart-item-price-wrap">';
+                    content += '<span class="header__cart-item-price">' + cart.ProductPriceDisplay +'</span>';
+                    content += '<span class="header__cart-item-multiply">x</span>';
+                    content += '<span class="header__cart-item-qnt" id="product_quantities_'+cart.ProductID+'">' + quantities + '</span>';
+                    content += '</div>';
+                    content += '</div>';
+                    content += '<div class="header__cart-item-body">';
+                    content += '<span class="header__cart-item-description">';
+                    content += 'Phân loại'+ cart.ProductCategoryDisplay;
+                    content += '</span>';
+                    content += '<span class="header__cart-item-remove"><a  onclick="DeleteProduct('+id+')">Bỏ</a></span>';
+                    content += '</div>';
+                    content += '</div>';
+                    content += '</li>';
+                    var list_item = document.getElementById("li_" + id);
+                    if (list_item) {
+                        var tagQuantites = document.getElementById("product_quantities_" + id);
+                        var currentQuanties = Number.parseInt(tagQuantites.innerHTML);
+                        currentQuanties += Number.parseInt(quantities);
+                        tagQuantites.innerHTML = currentQuanties;
+                    }
+                    else {
+                        var tagCount = document.getElementById("cart_count");
+                        var count = Number.parseInt(tagCount.innerHTML);
+                        count += 1;
+                        tagCount.innerHTML = count;
+                        $('#list_cart').append(content);
+                    }
+                    alert("Thêm thành công sản phẩm vào giỏ hàng")
+                }
+                else {
+                    alert("Không thể thêm sản phẩm vào giỏ hàng")
+                }
+            }
+        });
+    }
+
+
+</script>
+

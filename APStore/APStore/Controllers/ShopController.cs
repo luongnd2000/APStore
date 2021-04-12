@@ -1,4 +1,6 @@
-﻿using APStore.Models.DAO;
+﻿using APStore.Common;
+using APStore.Models.DAO;
+using APStore.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,31 @@ namespace APStore.Controllers
             var model = new ProductDao().Get(id);
             return View(model);
         }
-
-      
+        public ActionResult LogOut()
+        {
+            Session[Constant.UserLoginSession] = null;
+            return RedirectToAction("Index", "Shop");
+        }
+        [ChildActionOnly]
+        public ActionResult Top()
+        {
+            UserLogin current = (UserLogin)Session[Constant.UserLoginSession];
+            if (current != null)
+            {
+                List<Cart> carts = new CartDAO().ListAll(current.Name);
+                foreach (var item in carts)
+                {
+                    Product p = new ProductDao().Get(item.ProductID);
+                    item.ProductNameDisplay = p.Name;
+                    item.ProductImagePathDisplay = p.ImagePath;
+                    item.ProductPriceDisplay = p.Price;
+                    int CategoryID = p.CategoryID;
+                    item.ProductCategoryDisplay = new ProductCategoryDAO().Get(CategoryID).Name;
+                }
+                ViewBag.Carts = carts;
+                ViewBag.Count = carts.Count;
+            }
+            return PartialView(current);
+        }
     }
 }

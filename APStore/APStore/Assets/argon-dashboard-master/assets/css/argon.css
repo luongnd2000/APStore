@@ -126,6 +126,7 @@ h6
 p
 {
     margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 abbr[title],
@@ -21438,9 +21439,10 @@ textarea[resize='horizontal']
 
     min-width: 2rem;
 }
-    .navbar-vertical .navbar-nav .nav-link .dropdown-menu .dropdown-menu {
-        margin-left: .5rem;
-    }
+.navbar-vertical .navbar-nav .nav-link .dropdown-menu
+{
+    border: none;
+}
 .navbar-vertical .navbar-nav .nav-link .dropdown-menu .dropdown-menu
 {
     margin-left: .5rem;

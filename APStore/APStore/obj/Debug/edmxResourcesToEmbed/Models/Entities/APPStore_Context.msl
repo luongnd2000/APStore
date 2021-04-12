@@ -67,6 +67,7 @@
     <EntitySetMapping Name="UserLogins">
       <EntityTypeMapping TypeName="APStoreModel.UserLogin">
         <MappingFragment StoreEntitySet="UserLogin">
+          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="AvartarPath" ColumnName="AvartarPath" />
           <ScalarProperty Name="NameDisplay" ColumnName="NameDisplay" />
           <ScalarProperty Name="Pass" ColumnName="Pass" />
@@ -80,6 +81,15 @@
           <ScalarProperty Name="Quantities" ColumnName="Quantities" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="BillID" ColumnName="BillID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="APStoreModel.Cart">
+        <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="Quantities" ColumnName="Quantities" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

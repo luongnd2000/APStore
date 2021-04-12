@@ -30,6 +30,15 @@ warning 6002: The table/view 'APStore.dbo.BillDetail' does not have a primary ke
     <Property Name="ProductID" Type="int" Nullable="false" />
     <Property Name="Quantities" Type="int" />
   </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Quantities" Type="int" />
+  </EntityType>
   <EntityType Name="DeliveryDetail">
     <Key>
       <PropertyRef Name="ID" />
@@ -76,10 +85,12 @@ warning 6002: The table/view 'APStore.dbo.BillDetail' does not have a primary ke
     <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="NameDisplay" Type="nvarchar" MaxLength="100" />
     <Property Name="AvartarPath" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityContainer Name="APStoreModelStoreContainer">
     <EntitySet Name="AdminLogin" EntityType="Self.AdminLogin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DeliveryDetail" EntityType="Self.DeliveryDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Discount" EntityType="Self.Discount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />

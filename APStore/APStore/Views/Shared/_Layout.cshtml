@@ -24,66 +24,67 @@
 
     <link rel="stylesheet" href="~/Assets/f8-shop/assets/css/detailProduct.css">
     <link rel="stylesheet" href="~/Assets/f8-shop/assets/css/cart.css">
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">*@
 </head>
 
 <body>
     <div class="app">
-        @RenderPage("_Top.cshtml")
+        @{ Html.RenderAction("Top", "Shop");}
         @RenderBody()
         @RenderPage("_Footer.cshtml")
 
         <!-- Modal layout -->
         <!-- <div class="modal">
-            <div class="modal__overlay"></div>
-            <div class="modal__body"> -->
+        <div class="modal__overlay"></div>
+        <div class="modal__body"> -->
         <!-- Register form -->
         <!-- <div class="auth-form">
-                    <div class="auth-form__container">
-                        <div class="auth-form__header">
-                            <h3 class="auth-form__heading">Đăng ký</h3>
-                            <span class="auth-from__switch-btn">Đăng nhập</span>
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                        <span class="auth-from__switch-btn">Đăng nhập</span>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Email của bạn">
                         </div>
-                        <div class="auth-form__form">
-                            <div class="auth-form__group">
-                                <input type="text" class="auth-form__input" placeholder="Email của bạn">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" placeholder="Xác minh mật khẩu">
-                            </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
                         </div>
-
-                        <div class="auth-form__aside">
-                            <p class="auth-form__policy-text">
-                                Bằng việc đăng ký bạn đã đồng ý với F8-shop về
-                                <a href="#" class="auth-form__text-link">Điều khoản dịch vụ</a> &
-                                <a href="#" class="auth-form__text-link">Chính sách bảo mật</a>
-                            </p>
-                        </div>
-
-                        <div class="auth-form__controls">
-                            <button class="btn auth-form__controls-back btn--normal">Trở lại</button>
-                            <button class="btn btn--primary">Đăng ký</button>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Xác minh mật khẩu">
                         </div>
                     </div>
-                    <div class="auth-form__socials">
-                        <a href="#" class="btn btn--size-s auth-form__socials--face btn--width-icon">
-                            <i class="fab fa-facebook-square auth-form__socials-icon"></i>
-                            <span class="auth-form__socials-title">
-                                Kết nối với Facebook
-                            </span>
-                        </a>
-                        <a href="#" class="btn btn--size-s auth-form__socials--google btn--width-icon">
-                            <i class="fab fa-google-plus-square auth-form__socials-icon"></i>
-                            <span class="auth-form__socials-title">
-                                Kết nối với Google
-                            </span>
-                        </a>
 
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng ký bạn đã đồng ý với F8-shop về
+                            <a href="#" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="#" class="auth-form__text-link">Chính sách bảo mật</a>
+                        </p>
                     </div>
-                </div> -->
+
+                    <div class="auth-form__controls">
+                        <button class="btn auth-form__controls-back btn--normal">Trở lại</button>
+                        <button class="btn btn--primary">Đăng ký</button>
+                    </div>
+                </div>
+                <div class="auth-form__socials">
+                    <a href="#" class="btn btn--size-s auth-form__socials--face btn--width-icon">
+                        <i class="fab fa-facebook-square auth-form__socials-icon"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="#" class="btn btn--size-s auth-form__socials--google btn--width-icon">
+                        <i class="fab fa-google-plus-square auth-form__socials-icon"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Google
+                        </span>
+                    </a>
+
+                </div>
+            </div> -->
         <!-- Login form -->
         <!-- <div class="auth-form">
                     <div class="auth-form__container">
@@ -133,9 +134,9 @@
         </div> -->
     </div>
     @*<script src="~/Assets/f8-shop/assets/js/main.js"></script>*@
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>

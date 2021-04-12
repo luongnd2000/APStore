@@ -94,7 +94,6 @@ namespace APStore.Areas.Admin.Controllers
                     file.SaveAs(path);
                     obj.ImagePath = rootFile + fileName;
                 }
-
                 bool result = new ProductDao().Update(obj);
                 if (result)
                 {
